@@ -40,8 +40,8 @@
 #define __S2N_ENSURE_DEBUG( cond, action ) __S2N_ENSURE_LIKELY((cond), action)
 #endif
 
-#define __S2N_ENSURE_PRECONDITION( cond ) s2n_likely(cond)
-#define __S2N_ENSURE_POSTCONDITION( cond ) s2n_likely(cond)
+#define __S2N_ENSURE_PRECONDITION( result ) (s2n_likely(s2n_result_is_ok(result)) ? S2N_RESULT_OK : S2N_RESULT_ERROR)
+#define __S2N_ENSURE_POSTCONDITION( result ) (s2n_likely(s2n_result_is_ok(result)) ? S2N_RESULT_OK : S2N_RESULT_ERROR)
 
 #define __S2N_ENSURE_SAFE_MEMCPY( d , s , n , guard )                            \
   do {                                                                           \
