@@ -15,7 +15,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-#include "utils/s2n_hash.h"
+#include "crypto/s2n_hash.h"
 #include "error/s2n_errno.h"
 #include <smack.h>
 #include "ct-verif.h"
