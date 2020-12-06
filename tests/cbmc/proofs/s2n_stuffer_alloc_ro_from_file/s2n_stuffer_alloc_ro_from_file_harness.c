@@ -39,7 +39,7 @@ void s2n_stuffer_alloc_ro_from_file_harness()
 
     /* Operation under verification. */
     if (s2n_stuffer_alloc_ro_from_file(stuffer, file) == S2N_SUCCESS) {
-        assert(s2n_stuffer_is_valid(stuffer));
+        assert(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
     } else {
         if (s2n_stuffer_is_valid(stuffer) && errno != EBADF
             && /* The stuffer might not be equivalent if close() fails. */

@@ -26,7 +26,7 @@ void s2n_calculate_stacktrace() {}
 void s2n_stuffer_free_harness()
 {
     struct s2n_stuffer *stuffer = cbmc_allocate_s2n_stuffer();
-    __CPROVER_assume(s2n_stuffer_is_valid(stuffer));
+    __CPROVER_assume(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
 
     nondet_s2n_mem_init();
 

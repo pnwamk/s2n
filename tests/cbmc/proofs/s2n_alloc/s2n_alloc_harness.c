@@ -37,7 +37,7 @@ void s2n_alloc_harness()
         if (size != 0) {
             assert(__CPROVER_w_ok(blob->data, blob->allocated));
         }
-        assert(s2n_blob_is_valid(blob));
+        assert(s2n_result_is_ok(s2n_blob_validate(blob)));
     } else {
         assert(blob == NULL || s2n_blob_is_valid(blob));
     }

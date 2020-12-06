@@ -24,6 +24,7 @@ PROOF_SOURCES += $(PROOF_SOURCE)/proof_allocators.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_blob.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_mem.c
 PROJECT_SOURCES += $(SRCDIR)/error/s2n_errno.c
+PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 
 UNWINDSET +=
 

@@ -33,5 +33,5 @@ void s2n_blob_is_growable_harness()
     }
 
     /* Post-condition. */
-    if (blob != NULL) assert(s2n_blob_is_valid(blob));
+    if (blob != NULL) assert(s2n_result_is_ok(s2n_blob_validate(blob)));
 }
