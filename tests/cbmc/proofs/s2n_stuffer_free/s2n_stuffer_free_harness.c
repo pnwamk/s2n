@@ -21,14 +21,13 @@
 #include "api/s2n.h"
 #include "stuffer/s2n_stuffer.h"
 
-void s2n_calculate_stacktrace() {}
-
 void s2n_stuffer_free_harness()
 {
     struct s2n_stuffer *stuffer = cbmc_allocate_s2n_stuffer();
-    __CPROVER_assume(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
 
     nondet_s2n_mem_init();
 
-    if (s2n_stuffer_free(stuffer) == 0) { assert_all_zeroes(stuffer, sizeof(*stuffer)); }
+    if (s2n_stuffer_free(stuffer) == S2N_SUCCESS && stuffer != NULL) {
+        assert_all_zeroes(stuffer, sizeof(*stuffer));
+    }
 }

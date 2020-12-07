@@ -36,6 +36,6 @@ PROJECT_SOURCES += $(SRCDIR)/utils/s2n_mem.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_safety.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 
-UNWINDSET += s2n_stuffer_send_to_fd.7:3
+UNWINDSET += s2n_stuffer_send_to_fd.5:3
 
 include ../Makefile.common

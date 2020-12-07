@@ -37,6 +37,6 @@ PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 # We abstract this function because manual inspection demonstrates it is unreachable.
 REMOVE_FUNCTION_BODY += s2n_calculate_stacktrace
 
-UNWINDSET += s2n_blob_char_to_lower.3:$(call addone,$(BLOB_SIZE))
+UNWINDSET += s2n_blob_char_to_lower.1:$(call addone,$(BLOB_SIZE))
 
 include ../Makefile.common

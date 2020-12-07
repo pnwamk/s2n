@@ -102,11 +102,12 @@ int s2n_stuffer_growable_alloc(struct s2n_stuffer *stuffer, const uint32_t size)
 
 int s2n_stuffer_free(struct s2n_stuffer *stuffer)
 {
-    if (stuffer->alloced) {
-        GUARD(s2n_free(&stuffer->blob));
+    if (stuffer != NULL) {
+        if (stuffer->alloced) {
+            GUARD(s2n_free(&stuffer->blob));
+        }
+        *stuffer = (struct s2n_stuffer) {0};
     }
-    *stuffer = (struct s2n_stuffer) {0};
-
     return S2N_SUCCESS;
 }
 

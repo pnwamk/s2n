@@ -41,6 +41,6 @@ PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 REMOVE_FUNCTION_BODY += s2n_blob_slice
 REMOVE_FUNCTION_BODY += s2n_stuffer_wipe
 
-UNWINDSET += s2n_stuffer_read_token.6:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += s2n_stuffer_read_token.2:$(call addone,$(MAX_BLOB_SIZE))
 
 include ../Makefile.common
